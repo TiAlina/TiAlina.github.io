@@ -1,0 +1,135 @@
+body{
+    font-family: 'Source Code Pro', monospace;
+}
+
+body , ul{
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.main-menu ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+li {
+    display: inline;
+    padding-right: 60px;
+
+}
+
+.main-menu li:last-child {
+    margin-right: 0;
+}
+
+
+
+.header {
+    background-color: rgba(27, 12, 56, 0.682);
+    color: rgba(247, 246, 249, 0.682);
+    padding: 20px 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+    width: 100%;
+    background-image: url(images/back.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.container {
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+.main-menu a {
+    text-decoration: none;
+    color: rgb(203, 187, 226);
+}
+
+p {
+    text-align: justify;
+}
+
+.footer {
+    background-color: rgba(14, 1, 39, 0.682);
+    color: rgba(247, 246, 249, 0.682);;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    color: rgba(11, 1, 29, 0.682);
+    border: 2px solid rgba(11, 1, 29, 0.682);
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    transition: color ls, border color ls;
+}
+
+.btn-white {
+    color: rgb(203, 187, 226);
+    border-color: rgb(203, 187, 226);
+}
+
+.btn:hover {
+    color:rgb(42, 5, 134);
+    border-color: rgb(64, 5, 148);
+}
+
+.avatar {
+    height: 300px;
+    background-image: url(images/background1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+}
+
+.avatar img {
+    height: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid rgb(33, 2, 62);
+}
+
+th, td {
+    text-align: center;
+    padding: 5px;
+}
+
+.text-upper {
+    text-transform: uppercase;
+    color: rgba(247, 246, 249, 0.682);
+}
+
+.me {
+    height: 200px;
+}
