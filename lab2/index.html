@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интернет магазин</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header clearfix">
+        <div class="conteiner">
+            <nav class="main-menu">
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Каталог</a></li>
+                    <li><a href="#">Акции</a></li>
+                    <li><a href="#">Магазины</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="profile">
+                <a href="#">Вход</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="conteiner">
+        <aside class="sidebar">
+            <form >
+                <fieldset>
+                    <legend>Производители</legend>
+                    <div class="form-group">
+                        <input type="checkbox" name="manufacturer" id="manufacturer1">
+                        <label for="manufacturer">Производитель 1</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" name="manufacturer" id="manufacturer2">
+                        <label for="manufacturer">Производитель 2</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" name="manufacturer" id="manufacturer3">
+                        <label for="manufacturer">Производитель 3</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" name="manufacturer" id="manufacturer4">
+                        <label for="manufacturer">Производитель 4</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" name="manufacturer" id="manufacturer5">
+                        <label for="manufacturer">Производитель 5</label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Группы товаров</legend>
+
+                    <div class="form-group">
+                        <input type="radio" name="group" id="group1">
+                        <label for="group1">Группа 1</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="radio" name="group" id="group2">
+                        <label for="group2">Группа 2</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="radio" name="group" id="group3">
+                        <label for="group3">Группа 3</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="radio" name="group" id="group4">
+                        <label for="group4">Группа 4</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="radio" name="group" id="group5">
+                        <label for="group5">Группа 5</label>
+                    </div>
+                </fieldset>
+                <button class="btn" type="submit">Применить</button>
+            </form>
+        </aside>
+
+        <div class="page-content">
+            <h1 class="products-header">Товары для дома</h1>
+            <div class="product">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images\product1.jpg" alt="product1">
+                    </div>
+                    <div class="product-details">
+                        <header>Чайник</header>
+                        <p class="product-info">
+                            Ваше будущее начинается с того момента, когда вы наливаете чашку чая из нашего красного чайника.
+                            Дарите себе нечто большее, чем просто напиток – дарите себе роскошь и утонченность
+                            в каждом глотке.
+                        </p>
+                        <div class="action">
+                            <button class="buy-btn">
+                                <span class="price">1000 </span><span class="buy">Заказать</span>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images\product2.jpg" alt="product2">
+                    </div>
+                    <div class="product-details">
+                        <header>Стул</header>
+                        <p class="product-info">
+                            Сидя на нашем белом стуле, вы встречаетесь с чистотой и гармонией,
+                            которые наполняют ваш дом светом и благополучием. Отдайте предпочтение не
+                            только комфорту, но и элегантности – ваше пространство заслуживает лучшего.
+                        </p>
+                        <div class="action">
+                            <button class="buy-btn">
+                                <span class="price">4000 </span><span class="buy">Заказать</span>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images\product3.jpg" alt="product3">
+                    </div>
+                    <div class="product-details">
+                        <header>Стол</header>
+                        <p class="product-info">
+                            Стол – это не просто предмет мебели, он – сердце вашего дома, место, где рождаются великие идеи и вдохновение.
+                            Наши столы созданы для тех, кто ценит не только красоту в дизайне, но и тепло в каждом
+                            разговоре. Позвольте вашим мечтам и встречам находить свою площадку – на вершине этого стола
+                        </p>
+                        <div class="action">
+                            <button class="buy-btn">
+                                <span class="price">2700 </span><span class="buy">Заказать</span>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images\product5.jpg" alt="product5">
+                    </div>
+                    <div class="product-details">
+                        <header>Чайный сервиз</header>
+                        <p class="product-info">
+                            Чайный сервиз – это не просто посуда, это врата в мир умиротворения и традиций.
+                            В каждой чашке, в каждой ложке звучит эхо вековых обрядов и встреч. Насладитесь вкусом
+                            и атмосферой настоящей церемонии в каждой чашке с нашим чайным сервизом.
+                        </p>
+                        <div class="action">
+                            <button class="buy-btn">
+                                <span class="price">3000 </span><span class="buy">Заказать</span>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images\product3.jpg" alt="product3">
+                    </div>
+                    <div class="product-details">
+                        <header>Фикус</header>
+                        <p class="product-info">
+                            Фикус – это не просто растение, это живой символ уверенности и роста.
+                             В каждом его листе заложено величие природы и непрерывное стремление к свету.
+                             Позвольте фикусу войти в ваш дом и наполнить его энергией жизни.
+                        </p>
+                        <div class="action">
+                            <button class="buy-btn">
+                                <span class="price">1900 </span><span class="buy">Заказать</span>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images\product6.jpg" alt="product6">
+                    </div>
+                    <div class="product-details">
+                        <header>Подсвечник</header>
+                        <p class="product-info">
+                            "Наш подсвечник – это больше, чем просто источник света. Это как мгновение
+                            из фильма, где каждая свеча создает свою уникальную историю, словно в кадре
+                            из культового кино. Позвольте свечам создать атмосферу, напоминающую о ваших
+                            любимых сценах из фильмов
+                        </p>
+                        <div class="action">
+                            <button class="buy-btn">
+                                <span class="price">1000 </span><span class="buy">Заказать</span>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images\product7.jpg" alt="product7">
+                    </div>
+                    <div class="product-details">
+                        <header>Ваза</header>
+                        <p class="product-info">
+                            вазы – как верные друзья в мире интерьера. Они не только украшают ваш дом, но и
+                            хранят в себе множество историй, будто верный пес, который каждый раз встречает вас с хвостиком
+                            и радостью. Так что дайте вашему дому тепло и ласку, как объятия вашей собачки, способной принимать вас с восторгом.
+                        </p>
+                        <div class="action">
+                            <button class="buy-btn">
+                                <span class="price">1000 </span><span class="buy">Заказать</span>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images\product8.jpg" alt="product8">
+                    </div>
+                    <div class="product-details">
+                        <header>Варочная поверхность</header>
+                        <p class="product-info">
+                            Варочная поверхность – это как аккорды на укулеле в мире кулинарии. Где каждый ингредиент
+                             – это нота, каждая кастрюля – это струна. Позвольте себе погрузиться в эту мелодию
+                              вкусов, покачиваясь в гамаке уюта и гармонии, который создает ваша кухня.
+                        </p>
+                        <div class="action">
+                            <button class="buy-btn">
+                                <span class="price">9000 </span><span class="buy">Заказать</span>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images\product9.jpg" alt="product9">
+                    </div>
+                    <div class="product-details">
+                        <header>Букет</header>
+                        <p class="product-info">
+                            Букет – это как чудесный танец цветов в объятиях весны.
+                            Каждый цветок, словно улетающая нота в мелодии любви, приносит с собой аромат
+                            нежности и красоты. Этот букет – подарок от сердца, словно нежные слова от возлюбленного
+                            глупца, которые тают в сердце, как весенний снег под лучами солнца
+                        </p>
+                        <div class="action">
+                            <button class="buy-btn">
+                                <span class="price">3000 </span><span class="buy">Заказать</span>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <button class="scroll-to-top" title="Наверх">&#9650</button>
+
+    </main>
+    <footer class="footer">
+        <div class="container">
+            &copy Ti's HomeStuff
+        </div>
+    </footer>
+
+</body>
+</html>

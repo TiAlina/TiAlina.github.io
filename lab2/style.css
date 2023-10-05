@@ -1,0 +1,189 @@
+body{
+    margin: 0;
+    position:relative;
+    min-height: 100vh;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+.action {
+    text-align:center;
+}
+
+.btn {
+    padding: 5%;
+    margin-top: 5px;
+    text-align: center;
+    background-color: #8a08c6;
+    color: aliceblue;
+    border: 0px;
+    border-radius: 5px;
+    border-color: #8a08c6;
+}
+
+.buy-btn {
+    font-size: 1rem;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+.buy-btn span {
+    display: inline-block;
+    padding: 0.625rem  1.25rem;
+}
+
+.buy-btn .price {
+    background-color: #333;
+}
+
+.buy-btn .buy {
+    background-color: #8a08c6;
+    font-weight: bold;
+}
+
+.header{
+    background-color: rgb(69, 14, 97);
+    background-image: url(images/back.webp);
+    padding: 1.25rem;
+    border-bottom: 5px solid #8a08c6;
+    position: sticky;
+}
+
+
+.conteiner{
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+.main-menu{
+    float: left;
+}
+
+
+.main-menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-menu li{
+    display: inline;
+    margin-right: 10px;
+
+}
+
+.header a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+.profile{
+    float: right;
+}
+
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.sidebar{
+    float: left;
+    width: 240px;
+    padding: 1rem;
+    box-sizing: border-box;
+    position: sticky;
+    top: 63px;
+}
+
+.page-content{
+    margin-left: 15rem;
+    padding: 1rem;
+}
+
+.products-header{
+    margin: 0;
+}
+
+.product-card{
+    display: inline-block;
+    height: 21.8rem;
+    width: 31rem;
+    border: 2px solid #8a08c6;
+    border-radius: 5px;
+    background-color: rgb(240, 240, 240);
+    margin: 0 0.625rem 0.625rem;
+}
+
+.product-image{
+    float: left;
+    width: 50%;
+    height: 100%;
+
+}
+
+.product-image img{
+    width: 100%;
+    height: 100%;
+}
+
+.product-details{
+    float: right;
+    width: 50%;
+    height: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.product-details header{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.product-info{
+    text-align: justify;
+    font-size: 1.25;
+    overflow: after;
+
+}
+
+.footer {
+    padding: 1.25rem 0;
+    color:white;
+    border-top: 5px solid #8a08c6;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(69, 14, 97);
+    background-image: url(images/back.webp);
+
+}
+
+body::after {
+    height: 63px;
+    content: '';
+    display:block;
+}
+
+.scroll-to-top {
+    position:fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 10;
+    border-radius: 50%;
+    background-color: #8a08c6;
+    color:aliceblue;
+    border-color: #8a08c6
+}
