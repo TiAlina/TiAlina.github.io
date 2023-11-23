@@ -1,0 +1,51 @@
+#game {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+#board {
+    height: 300px;
+    width: 300px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pole {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    box-sizing: border-box;
+    border: 2px solid black;
+    font-size: 80px;
+}
+
+.btn1 {
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 2px;
+    background-color: white;
+    font-size: 110%;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.message {
+    width: 40vw;
+    border: 2px solid black;
+    margin: 15px auto;
+    padding: 5px;
+}
+.success{
+    color: green;
+    background-color: lightgreen;
+    border-color: green;
+
+}
+.error{
+    color: red;
+    background-color: rgb(238, 186, 144);
+    border-color: red;
+}
