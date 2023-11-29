@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styleauth.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+</head>
+<body class="auth-b">
+
+    <form method="post" action="https://httpbin.org/post">
+        <fieldset class="auth-f">
+            <div class="div">
+                <h2>Авторизация</h2>
+                <div class>
+                    <label for="log" class="auth-l">введите логин</label>
+                </div>
+                <div class="auth">
+                    <input type="text" id="log" name="log" placeholder="login" required>
+                </div>
+
+                <div>
+                    <label for="pass">введите пароль</label>
+                </div>
+                <div class="auth">
+                    <input type="password" id="pass" name="pass" placeholder="password" required>
+                </div>
+                <input type="checkbox" name="agree" id="agree">
+                <label for="agree">Запомнить</label>
+                <button type="submit">ТЫК</button>
+            </div>
+        </fieldset>
+    </form>
+
+</body>
+</html>
