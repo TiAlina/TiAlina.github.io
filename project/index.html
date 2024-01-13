@@ -103,22 +103,19 @@
         <div class="container mt-5">
             <div class="card border border-danger p-4">
                 <h2 class="text-danger">Пешеходные маршруты</h2>
-                <form>
-                    <div class="form-row">
-                        <div class="col-md-6 mb-3">
-                            <label for="routeName">Название маршрута</label>
-                            <input type="text" class="form-control" id="routeName" placeholder="Введите название">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="landmark">Достопримечательность</label>
-                            <select class="form-control" id="landmark">
-                                <option value="kremlin">Кремль</option>
-                                <option value="redSquare">Красная площадь</option>
-                                <option value="stBasilsCathedral">Соборы Василия Блаженного</option>
-                            </select>
-                        </div>
-                    </div>
-                </form>
+                    <form id="searchForm">
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="searchRoute">Поиск по названию</label>
+                                <input type="text" class="form-control" id="searchRoute" placeholder="Введите название">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                    <label for="searchLandmark">Выберите достопримечательность</label>
+                                    <select class="form-control" id="searchLandmark"></select>
+                            </div>
+                            </div>
+                        <button type="button" class="btn btn-danger" onclick="searchRoutes()">Поиск</button>
+                    </form>
                 <div class="table-responsive">
                     <table class="table mt-4">
                         <thead class="thead-dark">
@@ -132,7 +129,6 @@
                         <tbody id="tableBody"></tbody>
                     </table>
                 </div>
-
             </div>
         </div>
 
