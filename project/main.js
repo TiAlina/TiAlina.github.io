@@ -1,13 +1,10 @@
-'use strict';
-
+const apiKey = '2f188709-6fab-4094-947d-730dd80ebecc';
 let currentPage = 1;
 const recordsPerPage = 10;
-let nameRoute = '';
 let selectedRouteId = null;
 
-async function loadRoute() {
+async function loadRoutes() {
     const apiUrl = 'http://exam-2023-1-api.std-900.ist.mospolytech.ru/api/routes';
-    const apiKey = '2f188709-6fab-4094-947d-730dd80ebecc';
     const url = `${apiUrl}?api_key=${apiKey}`;
 
     try {
@@ -15,16 +12,24 @@ async function loadRoute() {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        const data = await response.json();
-        renderTableWalking(data);
-        splitSelectLandmark(data);
+
+        const routesData = await response.json();
+        renderTable(routesData);
+        renderPagination(routesData.length);
     } catch (error) {
-        console.error('There has been a problem with your fetch operation:', error);
+        console.error('Fetch operation error:', error);
+        updateNotification('Ошибка загрузки данных. Пожалуйста, попробуйте еще раз.');
     }
 }
 
+function updateNotification(message) {
+    const notificationElement = document.getElementById('notification');
+    notificationElement.textContent = message;
+    notificationElement.classList.remove('alert-success');
+    notificationElement.classList.add('alert-danger');
+}
 
-function renderTableWalking(data) {
+function renderTable(data) {
     const tbody = document.getElementById('routesTableBody');
     tbody.innerHTML = '';
 
@@ -37,99 +42,69 @@ function renderTableWalking(data) {
             <td>${route.name}</td>
             <td>${route.description}</td>
             <td>${route.mainObject}</td>
-            <td>
-                <button class="btn btn-success" onclick="handleRouteSelection(${route.id}, this.parentNode.parentNode)">
-                    Выбрать маршрут
-                </button>
-            </td>
+            <td><button class="btn btn-success" onclick="handleSelection(${route.id}, this.parentNode.parentNode)">Select Route</button></td>
         `;
-
-        tbody.appendChild(row);
 
         if (route.id === selectedRouteId) {
             row.classList.add('selected-route');
         }
-    });
 
-    renderPaginationControls(data.length);
+        tbody.appendChild(row);
+    });
 }
 
 
-function renderPaginationControls(totalRecords) {
+
+function renderPagination(totalRecords) {
     const totalPages = Math.ceil(totalRecords / recordsPerPage);
     const paginationContainer = document.getElementById('paginationContainer');
     paginationContainer.innerHTML = '';
 
     const paginationList = document.createElement('ul');
-    paginationList.classList.add('pagination');
+    paginationList.className = 'pagination';
 
-    for (let i = 1; i <= totalPages; i++) {
+    Array.from({ length: totalPages }, (_, i) => {
         const pageItem = document.createElement('li');
-        pageItem.classList.add('page-item');
+        pageItem.className = 'page-item';
 
         const pageLink = document.createElement('a');
-        pageLink.classList.add('page-link');
-        pageLink.textContent = i;
-        pageLink.onclick = function() {
-            currentPage = i;
-            loadRoute();
-        };
+        pageLink.className = 'page-link';
+        pageLink.textContent = i + 1;
+        pageLink.onclick = () => { currentPage = i + 1; loadRoutes(); };
 
         pageItem.appendChild(pageLink);
         paginationList.appendChild(pageItem);
-    }
+    });
 
     paginationContainer.appendChild(paginationList);
 }
+
+
+
 window.onload = function () {
-    windowload();
-}
-function windowload(){
-    loadRoute();
+    loadRoutes();
 }
 
-document.addEventListener('DOMContentLoaded', async function () {
-    const apiKey = '303bb3a5-1ede-4545-b449-4f904e790f77';
+document.addEventListener('DOMContentLoaded', async () => {
+    const mapKey = '303bb3a5-1ede-4545-b449-4f904e790f77';
+    const map = new mapgl.Map('map', { key: mapKey, center: [37.6176, 55.7558], zoom: 15 });
 
-    if (typeof mapgl !== 'undefined') {
-        let map = new mapgl.Map('map', {
-            key: apiKey,
-            center: [37.36, 55.45],
-            zoom: 7,
-        });
+    document.getElementById('locationForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const address = document.getElementById('locationInput').value;
 
-        document.getElementById('addressForm').addEventListener('submit', async function (event) {
-            event.preventDefault();
+        try {
+            const response = await fetch(`https://catalog.api.2gis.com/3.0/items/geocode?q=${address}&fields=items.point&key=${mapKey}`);
+            const { result: { items: [{ point }] } } = await response.json();
 
-            const address = document.getElementById('addressInput').value;
-            const url = new URL('https://catalog.api.2gis.com/3.0/items/geocode');
-            url.searchParams.append('q', address);
-            url.searchParams.append('fields', 'items.point');
-            url.searchParams.append('key', apiKey);
-            console.log(url);
-
-            try {
-                const response = await fetch(url);
-                const data = await response.json();
-                const coordinates = data.result.items[0].point;
-                console.log(coordinates);
-                const marker = new mapgl.Marker(map, {
-                    coordinates: [coordinates.lon, coordinates.lat],
-                    label: {
-                        text: 'Вы здесь',
-                        offset: [0, -75],
-                        image: {
-                            url: 'https://docs.2gis.com/img/mapgl/tooltip.svg',
-                            size: [100, 40],
-                            padding: [10, 10, 20, 10],
-                        },
-                    },
-                });
-            } catch (error) {
-                console.error('Geocoding error:', error);
-            }
-        });
-    } else {
-        console.error('mapgl library is not loaded.');
-    }
+            new mapgl.Marker(map, { coordinates: [point.lon, point.lat] });
+        } catch (error) {
+            console.error('Geocoding error:', error);
+        }
+    });
 });
+
+function handleSelection(routeId, row) {
+    selectedRouteId = routeId;
+    loadRoutes();
+}
