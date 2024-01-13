@@ -7,6 +7,8 @@ window.onload = function () {
     loadRoutes();
 }
 
+let routesData = [];
+
 async function loadRoutes() {
     try {
         const response = await fetch(`http://exam-2023-1-api.std-900.ist.mospolytech.ru/api/routes?api_key=${apiKey}`, { method: 'GET' });
@@ -14,20 +16,25 @@ async function loadRoutes() {
             throw new Error('No response');
         }
 
-        const routesData = await response.json();
+        routesData = await response.json();
         renderTable(routesData);
         renderPagination(routesData.length);
+
+        // Заполнение селектора достопримечательностей
+        const landmarkSelect = document.getElementById('searchLandmark');
+        const landmarks = [...new Set(routesData.map(route => route.mainObject))]; // Получаем уникальные значения достопримечательностей
+        landmarks.forEach(landmark => {
+            const option = document.createElement('option');
+            option.value = landmark.toLowerCase();
+            option.textContent = landmark;
+            landmarkSelect.appendChild(option);
+        });
     } catch (error) {
         console.error('Fetch operation error:', error);
         updateNotification('Ошибка загрузки данных. Пожалуйста, попробуйте еще раз.');
     }
 }
 
-function updateNotification(message) {
-    document.getElementById('notification').textContent = message;
-    document.getElementById('notification').classList.remove('alert-success');
-    document.getElementById('notification').classList.add('alert-danger');
-}
 
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -98,4 +105,22 @@ function createPaginationList(totalRecords) {
 function setPageAndLoadRoutes(selectedPage) {
     page = selectedPage;
     loadRoutes();
+}
+
+function searchRoutes() {
+    const searchRouteInput = document.getElementById('searchRoute');
+    const searchLandmarkSelect = document.getElementById('searchLandmark');
+
+    const searchRoute = searchRouteInput.value.toLowerCase();
+    const searchLandmark = searchLandmarkSelect.value.toLowerCase();
+
+    const filteredRoutes = routesData.filter(route => {
+        const routeName = route.name.toLowerCase();
+        const routeLandmark = route.mainObject.toLowerCase();
+
+        return routeName.includes(searchRoute) && (searchLandmark === '' || routeLandmark === searchLandmark);
+    });
+
+    renderTable(filteredRoutes);
+    renderPagination(filteredRoutes.length);
 }
