@@ -1,7 +1,5 @@
 body {
     font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f7f7f7;
     color: #4b0134;
 }
@@ -28,12 +26,10 @@ header {
 h1 {
     color: #2c2c32;
     text-align: center;
-    margin: 20px 0;
 }
 
 #UniqueFeatures {
     background-color: #c0919173;
-    padding: 30px 0;
 }
 
 .btn-danger, .btn-primary {
@@ -48,3 +44,4 @@ footer {
     margin-top: 20px;
     color: rgb(255, 0, 123);
 }
+
