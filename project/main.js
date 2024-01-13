@@ -99,4 +99,3 @@ function setPageAndLoadRoutes(selectedPage) {
     page = selectedPage;
     loadRoutes();
 }
-
