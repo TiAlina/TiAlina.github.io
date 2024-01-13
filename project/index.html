@@ -2,16 +2,15 @@
 <html lang="ru">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ti's travel</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
-    <header class="header">
+    <header>
         <div class="container">
             <nav class="navbar navbar-expand-lg">
                 <h3>Ваши путешествия вместе с нами!</h3>
@@ -89,7 +88,7 @@
         <div class="border border-danger p-3 my-3">
             <div class="container mt-2">
                 <form id="locationForm">
-                    <div class="form-group">
+                    <div class="form">
                         <label for="locationInput">Введите адрес</label>
                         <input type="text" class="form-control" id="locationInput" placeholder="Введите местоположение" required>
                     </div>
@@ -129,7 +128,7 @@
                             <th scope="col">Действие</th>
                         </tr>
                     </thead>
-                    <tbody id="routesTableBody"></tbody>
+                    <tbody id="tableBody"></tbody>
                 </table>
             </div>
         </div>
@@ -153,7 +152,6 @@
 
     <script src="https://mapgl.2gis.com/api/js/v1"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script defer src="main.js"></script>
 
 </body>
