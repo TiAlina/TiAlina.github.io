@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mateyka corp.</title>
+    <title>ti's travel</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -13,135 +13,148 @@
 <body>
     <header class="header">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark ">
-                <a class="navbar-brand" href="index.html">Главная</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav ml-auto">
+            <nav class="navbar navbar-expand-lg">
+                <h3>Ваши путешествия вместе с нами!</h3>
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                      <a class="nav-link">Личный кабинет</a>
+                        <a class="navbar-brand" href="index.html">Домашняя</a>
+                        <a class="navbar-brand">Личный кабинет</a>
+                        <a class="navbar-brand">О нас</a>
                     </li>
-                  </ul>
-                </div>
-              </nav>
-            <h1 class="display-4">Ti's travel</h1>
+                </ul>
+            </nav>
         </div>
     </header>
-
-    <div class="alert alert-danger alert-dismissible fade show w-100 my-2" role="alert">
-        здесь вы можете увидеть ваши уведомления
+    <div class="container">
+    <div id="notification" class="alert alert-success alert-danger w-100 my-1" role="alert">
+        здесь отображаются ваши уведомления
     </div>
 
-    <main>
-        <div class="container">
+    <h1>Ti's travel</h1>
+    <div class="container">
 
-            <section id="about-company">
-                <div class="container mt-3">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="border border-danger p-2">
-                            <p>Сайт посвящен увлекательным путешествиям по многогранным маршрутам Москвы, предлагая удобный доступ к разнообразным ресурсам,
-                                таким как таблица с гидами, интерактивная карта и обширная база маршрутов. Посетители могут исследовать и открывать город, выбирая и сортируя маршруты по различным предпочтениям,
-                                чтобы создать для себя оптимальные варианты для изучения достопримечательностей Москвы.
-                                Взаимодействие с различными видами контента позволяет посетителям погрузиться в разнообразие предлагаемых маршрутов, создавая таким образом собственный неповторимый
-                                опыт путешествия по столице России.</p>
-                            </div>
-                          </div>
-                        <div class="col-md-6">
-                            <img src="mos.webp" alt="Компания" class="img-fluid">
-                      </div>
-                    </div>
-                  </div>
-            </section>
-
-            <section id="Advantage">
-                <div class="container mt-3">
-                    <div class="row">
-                    <div class="col-md-4">
-                        <div class="border border-danger p-2">
-                            <h3>"Открой Москву вместе с нами"</h3>
-                            <p>поднимает важность общего познавательного опыта. Вы сможете узнать свой город с новой стороны</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="border border-danger p-2">
-                            <h3>"неповторимые впечатления"</h3>
-                            <p>Мы уверены в оригинальности предлагаемых нами маршрутов, вы будете удивлены!</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="border border-danger p-2">
-                            <h3>"Путешествуйте в своем темпе"</h3>
-                            <p>У нас всегда индивидуальный подход к каждома и свобода выбора у наших посетителей.</p>
-                        </div>
-                    </div>
+    <section id="organization">
+        <div class="container my-3">
+            <div class="row p-2">
+                <div class="col-md-5">
+                    <div class="border border-danger p-2">
+                    <p>Сайт посвящен захватывающим путешествиям по разнообразным маршрутам Москвы, предлагая удобный доступ к различным ресурсам,
+                            таким как таблица с гидами, интерактивная карта и обширная база маршрутов. Посетители могут исследовать и открывать город, выбирая и сортируя маршруты по разным предпочтениям,
+                            чтобы создать для себя оптимальные варианты для изучения достопримечательностей Москвы.
+                            Взаимодействие с различными видами контента позволяет посетителям погрузиться в разнообразие предлагаемых маршрутов, создавая таким образом собственный неповторимый
+                            опыт путешествия по столице России.</p>
                     </div>
                 </div>
-            </section>
-
-            <section id="2Gis">
-                <div class="border border-danger p-2 my-2">
-                <div class="container mt-4">
-                    <form id="addressForm">
-                        <div class="form-group">
-                            <label for="addressInput">Откуда хотите начать путешествие?</label>
-                            <input type="text" class="form-control" id="addressInput" placeholder="Введите адрес" required>
-                        </div>
-                        <button type="submit" class="btn btn-ptimary">Начать</button>
-                    </form>
-                    </div>
-                    <div id="map" class="mt-4"></div>
+                <div class="col-md-6">
+                    <img src="mos.webp" alt="moscow" class="img-fluid">
+                </div>
             </div>
-            </section>
-
-            <section id="List-Walking-Routes">
-                <div class="container mt-3">
-                    <h2>Список пешеходных маршрутов</h2>
-                    <form>
-                        <div class="form-row">
-                            <div class="col-md-6 mb-3">
-                                <label for="routeName">Название маршрута</label>
-                                <input type="text" class="form-control" id="fouteName" placeholder="Введите название">
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="landmark">Достопримечательность</label>
-                                <select class="form-control" id="landmark"></select>
-                            </div>
-                        </div>
-                    </form>
-                    <table class="table mt-3">
-                        <thead>
-                            <tr>
-                                <th scope="col">Название</th>
-                                <th scope="col">Описание</th>
-                                <th scope="col">Достопримечательность</th>
-                                <th scope="col">Действие</th>
-                            </tr>
-                        </thead>
-                        <tbody id="routesTableBody"></tbody>
-                    </table>
-                </div>
-
-                <div id="paginationContainer" class="container mt-4">
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination justify-content-center"></ul>
-                    </nav>
-                </div>
-            </section>
         </div>
-        <footer class="bg-body-tertiary text-center text-lg-start mt-5">
-            <div class="text-center p-3">
-                ©aisha.ti@gmail.com
+    </section>
+    </div>
+
+
+
+    <section id="UniqueFeatures">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card border border-danger p-3">
+                        <h3>"Откройте новые грани Москвы"</h3>
+                        <p>Приглашаем вас на увлекательное открытие города. Познавайте Москву с нами и обретайте новые перспективы и новые впечатления.</p>
+                        <img src="mos.webp" alt="moscow" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border border-danger p-3">
+                        <h3>"Уникальные впечатления ждут вас"</h3>
+                        <p>Мы гарантируем, что наши маршруты предоставят вам неповторимые впечатления. Подготовьтесь к сюрпризам и удивительным открытиям!</p>
+                        <img src="mos.webp" alt="moscow" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border border-danger p-3">
+                        <h3>"Путешествуйте на своем волнении"</h3>
+                        <p>Мы ценим индивидуальность каждого посетителя. Путешествуйте в своем темпе, выбирайте свои маршруты и наслаждайтесь свободой выбора.</p>
+                        <img src="mos.webp" alt="moscow" class="img-fluid">
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
 
-        </footer>
 
-    <script defer src="main.js"></script>
+
+    <section id="ExploreMap">
+        <div class="border border-danger p-3 my-3">
+            <div class="container mt-2">
+                <form id="locationForm">
+                    <div class="form-group">
+                        <label for="locationInput">Введите адрес</label>
+                        <input type="text" class="form-control" id="locationInput" placeholder="Введите местоположение" required>
+                    </div>
+                    <button type="submit" class="btn btn-danger">Начать путешествие!</button>
+                </form>
+            </div>
+            <div id="map" class="mt-4"></div>
+        </div>
+    </section>
+
+    <section id="WalkingRoutesList">
+        <div class="container mt-5">
+            <div class="card border border-danger p-4">
+                <h2 class="text-danger">Пешеходные маршруты</h2>
+                <form>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="routeName">Название маршрута</label>
+                            <input type="text" class="form-control" id="routeName" placeholder="Введите название">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="landmark">Достопримечательность</label>
+                            <select class="form-control" id="landmark">
+                                <option value="kremlin">Кремль</option>
+                                <option value="redSquare">Красная площадь</option>
+                                <option value="stBasilsCathedral">Собор Василия Блаженного</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <table class="table mt-4">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Название</th>
+                            <th scope="col">Описание</th>
+                            <th scope="col">Достопримечательность</th>
+                            <th scope="col">Действие</th>
+                        </tr>
+                    </thead>
+                    <tbody id="routesTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="container mt-4 text-center">
+            <div id="paginationContainer">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center"></ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+    </div>
+
+    <footer class="bg-body-tertiary text-center text-lg-start mt-5">
+        <div class="text-center p-3">
+            ©aisha.ti@gmail.com
+        </div>
+
+    </footer>
+
     <script src="https://mapgl.2gis.com/api/js/v1"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="main.js"></script>
 
-    </main>
 </body>
 </html>
