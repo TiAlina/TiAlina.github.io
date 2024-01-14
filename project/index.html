@@ -99,23 +99,23 @@
         </div>
     </section>
 
-    <section id="WalkingRoutesList">
+    <section id="WalkingRoutes">
         <div class="container mt-5">
             <div class="card border border-danger p-4">
                 <h2 class="text-danger">Пешеходные маршруты</h2>
-                    <form id="searchForm">
-                        <div class="form-row">
-                            <div class="col-md-6 mb-3">
-                                <label for="searchRoute">Поиск по названию</label>
-                                <input type="text" class="form-control" id="searchRoute" placeholder="Введите название">
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                    <label for="searchLandmark">Выберите достопримечательность</label>
-                                    <select class="form-control" id="searchLandmark"></select>
-                            </div>
-                            </div>
-                        <button type="button" class="btn btn-danger" onclick="searchRoutes()">Поиск</button>
-                    </form>
+                <form id="searchForm">
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="searchRoute">Поиск по названию</label>
+                            <input type="text" class="form-control" id="searchRoute" placeholder="Введите название">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="searchLandmark">Выберите достопримечательность</label>
+                            <select class="form-control" id="searchLandmark"></select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-danger">Поиск</button>
+                </form>
                 <div class="table-responsive">
                     <table class="table mt-4">
                         <thead class="thead-dark">
