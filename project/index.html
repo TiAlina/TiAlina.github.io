@@ -92,7 +92,7 @@
                         <label for="locationInput">Введите адрес</label>
                         <input type="text" class="form-control" id="locationInput" placeholder="Введите местоположение" required>
                     </div>
-                    <button type="submit" class="btn btn-danger">Начать путешествие!</button>
+                    <button type="submit" class="btn btn-danger my-1">Начать путешествие!</button>
                 </form>
             </div>
             <div id="map" class="mt-4"></div>
@@ -116,6 +116,7 @@
                     </div>
                     <button type="submit" class="btn btn-danger">Поиск</button>
                 </form>
+
                 <div class="table-responsive">
                     <table class="table mt-4">
                         <thead class="thead-dark">
@@ -129,8 +130,26 @@
                         <tbody id="tableBody"></tbody>
                     </table>
                 </div>
+
+                <div class="table-responsive mt-5" id="guidesTableContainer">
+                    <h2 class="text-danger">Гиды для выбранного маршрута</h2>
+                    <table class="table mt-4">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Картинка профиля</th>
+                                <th scope="col">ФИО</th>
+                                <th scope="col">Язык</th>
+                                <th scope="col">Опыт работы</th>
+                                <th scope="col">Стоимость в час</th>
+                                <th scope="col">Выбор</th>
+                            </tr>
+                        </thead>
+                        <tbody id="guidesTableBody"></tbody>
+                    </table>
+                </div>
             </div>
         </div>
+
 
         <div class="container mt-4 text-center">
             <div id="paginationContainer">
@@ -166,9 +185,10 @@
             </div>
         </footer>
 
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
     <script src="https://mapgl.2gis.com/api/js/v1"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script defer src="main.js"></script>
-
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
 </body>
 </html>
