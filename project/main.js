@@ -1,12 +1,12 @@
-let routesData = []; 
-let selectedRoute = null; 
-let page = 1; 
-const recordsPerPage = 10; 
+let routesData = [];
+let selectedRoute = null;
+let page = 1;
+const recordsPerPage = 10;
 
 async function loadRoutes() {
     try {
         const apiKey = '2f188709-6fab-4094-947d-730dd80ebecc';
-        const response = await fetch(`http://exam-2023-1-api.std-900.ist.mospolytech.ru/api/routes?api_key=${apiKey}`, { method: 'GET' });
+        const response = await fetch(`https://edu.std-900.ist.mospolytech.ru/api/routes?api_key=${apiKey}`, { method: 'GET' });
 
         if (!response.ok) {
             throw new Error('No response');
@@ -107,3 +107,34 @@ function searchRoutes() {
     renderPagination(filteredRoutes.length);
 }
 
+DG.then(function () {
+    var map = DG.map('map', {
+        center: [55.7558, 37.6176],
+        zoom: 13
+    });
+});
+
+
+function handleSelection(routeId, row) {
+
+    cancelSelection();
+
+
+    selectedRoute = routeId;
+
+
+    const selectedRow = document.querySelector(`.selected-route`);
+    if (selectedRow) {
+        selectedRow.classList.remove('selected-route');
+    }
+    row.classList.add('selected-route');
+
+
+    const selectButton = row.querySelector('.btn-success');
+    if (selectButton) {
+        selectButton.classList.remove('btn-success');
+        selectButton.classList.add('btn-danger');
+    }
+
+
+}
