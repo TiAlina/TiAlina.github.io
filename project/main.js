@@ -1,17 +1,13 @@
-const apiKey = '2f188709-6fab-4094-947d-730dd80ebecc';
-let page = 1;
-const recordsPerPage = 10;
-let selectedRoute = null;
-
-window.onload = function () {
-    loadRoutes();
-}
-
-let routesData = [];
+let routesData = []; 
+let selectedRoute = null; 
+let page = 1; 
+const recordsPerPage = 10; 
 
 async function loadRoutes() {
     try {
+        const apiKey = '2f188709-6fab-4094-947d-730dd80ebecc';
         const response = await fetch(`http://exam-2023-1-api.std-900.ist.mospolytech.ru/api/routes?api_key=${apiKey}`, { method: 'GET' });
+
         if (!response.ok) {
             throw new Error('No response');
         }
@@ -20,9 +16,9 @@ async function loadRoutes() {
         renderTable(routesData);
         renderPagination(routesData.length);
 
-        // Заполнение селектора достопримечательностей
         const landmarkSelect = document.getElementById('searchLandmark');
-        const landmarks = [...new Set(routesData.map(route => route.mainObject))]; // Получаем уникальные значения достопримечательностей
+        const landmarks = [...new Set(routesData.map(route => route.mainObject))];
+
         landmarks.forEach(landmark => {
             const option = document.createElement('option');
             option.value = landmark.toLowerCase();
@@ -35,23 +31,15 @@ async function loadRoutes() {
     }
 }
 
-
-
 document.addEventListener('DOMContentLoaded', async () => {
     const map = new mapgl.Map('map', { key: '', center: [37.6176, 55.7558], zoom: 15 });
 
-    document.getElementById('locationForm').addEventListener('submit', async (event) => {
+    // Load routes and landmarks
+    await loadRoutes();
+
+    document.getElementById('searchForm').addEventListener('submit', (event) => {
         event.preventDefault();
-        const address = document.getElementById('locationInput').value;
-
-        try {
-            const response = await fetch(`https://catalog.api.2gis.com/3.0/items/geocode?q=${address}&fields=items.point&key=${map.key}`);
-            const { result: { items: [{ point }] } } = await response.json();
-
-            new mapgl.Marker(map, { coordinates: [point.lon, point.lat] });
-        } catch (error) {
-            console.error('Geocoding error:', error);
-        }
+        searchRoutes();
     });
 });
 
@@ -101,12 +89,6 @@ function createPaginationList(totalRecords) {
     return paginationList;
 }
 
-
-function setPageAndLoadRoutes(selectedPage) {
-    page = selectedPage;
-    loadRoutes();
-}
-
 function searchRoutes() {
     const searchRouteInput = document.getElementById('searchRoute');
     const searchLandmarkSelect = document.getElementById('searchLandmark');
@@ -124,3 +106,4 @@ function searchRoutes() {
     renderTable(filteredRoutes);
     renderPagination(filteredRoutes.length);
 }
+
